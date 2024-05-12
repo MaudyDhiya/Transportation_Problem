@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Supply Selection Method</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <style>
+            .bg-purple{
+                background-color:#9967CE;
+            }
+            .bg-purple2{
+                background-color:#BA9CF6;
+            }
+            .bg-purple3{
+                background-color:#CFB7FF;
+            }
+            .bg-purple4{
+                background-color:#E7DDFF;
+            }
+        </style>
+    </head>
+
+    <body class='bg-purple4'>
+        <header>
+            <!-- place navbar here -->
+            <nav
+                class="navbar navbar-expand-sm navbar-dark bg-purple2"
+            >
+                <div class="container">
+                    <a class="navbar-brand" href="{% url "home_beranda" %}">Transportation Problem Method</a>
+                    <button
+                        class="navbar-toggler d-lg-none"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapsibleNavId"
+                        aria-controls="collapsibleNavId"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="p-3 mb-4 bg-purple4 rounded-3">
+                <div class="container-fluid py-1">
+                    <h1 class="mb-3 display-5 fw-bold text-center">Supply Selection Method</h1>
+                    {% comment %} bagian form {% endcomment %}
+                    <div class="row">
+                        <div class="card">
+                            <div class="card-body">
+                            <div class="container">
+                                <form action="{% url "home_submitssm" %}" method="post">
+                                    {% csrf_token %}
+                                    {% comment %} agar url nya mengikuti nama bottonnya, tulis method="post"
+                                    setelah itu tambahkan csrf_token agar setiap input form memiliki token berbeda
+                                    {% endcomment %}
+                                    {% comment %} Title {% endcomment %}
+                                    <div class="mb-3 row">
+                                        <label
+                                            for="inputName"
+                                            class="col-3 col-form-label fw-bold"
+                                            >Title</label
+                                        >
+                                        <div
+                                            class="col-5"
+                                        >
+                                        <p> {{ title }}
+                                        </p>  
+                                        </div>
+                                    </div>
+                                    <h4 class="mb-3 fw-bold text-center">Tabel Transportation Problem</h4>
+                                    {% comment %} Membuat tabel data {% endcomment %}
+                                    <div id="table-container" class="table-responsive">
+                                        <!-- Table will be inserted here -->
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <div class="text-center">
+                                            <button  class="btn btn-primary" id="validateBtn">
+                                                Validate
+                                            </button>
+                                            <button type="submit" class="btn btn-primary" id="solveBtn" style="display:none;">
+                                                Solve
+                                            </button>
+                                        </div>
+                                    <div>
+                                        
+                                    </div>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+ 
+    <!-- Copyright -->
+    <div class="text-center p-4 bg-white" >
+      © 2024 Copyright:
+      <a class="text-reset fw-bold" href="https://www.linkedin.com/in/maudydhiyauf/" target="_blank">Maudy Dhiya Ulhaq.F</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+        <script>
+            // JavaScript code to generate the table based on nos and nod
+            document.addEventListener('DOMContentLoaded', function() {
+                const nos = parseInt("{{ nos }}"); // Ambil nilai nos dari template
+                const nod = parseInt("{{ nod }}"); // Ambil nilai nod dari template
+                generateTable(nos, nod);
+        
+                function generateTable(rows, cols) {
+                    const tableContainer = document.getElementById('table-container');
+                    const table = document.createElement('table');
+                    table.classList.add('table', 'table-bordered', 'table-striped', 'text-center'); // Tambahkan kelas-kelas Bootstrap
+        
+                    // Buat row untuk table heading (th)
+                    const headerRow = table.insertRow();
+                    // Tambahkan th kosong untuk kolom pertama (tanpa judul)
+                    const emptyHeaderCell = headerRow.insertCell();
+        
+                    // Tambahkan th untuk kolom-kolom destinasi dengan label "Destination 1", "Destination 2", ...
+                    for (let j = 0; j < cols; j++) {
+                        const headerCell = headerRow.insertCell();
+                        headerCell.textContent = `{{columnames}} ${j + 1}`;
+                    }
+    
+                    // Tambahkan th untuk kolom "Supply" di ujung (sebelah kanan) kolom-kolom destinasi
+                    const supplyHeaderCell = headerRow.insertCell();
+                    supplyHeaderCell.textContent = "Supply";
+        
+                    // Buat rows untuk isi tabel
+                    for (let i = 0; i < rows; i++) {
+                        const row = table.insertRow();
+                        const rowTitle = `{{rownames}} ${i + 1}`; // Judul baris (source 1, source 2, ...)
+                        const rowTitleCell = row.insertCell();
+                        rowTitleCell.textContent = rowTitle;
+                        rowTitleCell.classList.add('text-center'); // Tambahkan kelas text-center ke sel judul baris
+        
+                        // Tambahkan sel-sel untuk kolom-kolom destinasi
+                        for (let j = 0; j < cols; j++) {
+                            const cell = row.insertCell();
+                            const inputField = document.createElement('input');
+                            inputField.type = 'number';
+                            inputField.name = `input${i}${j}`;
+                            inputField.min = '1'; // Set nilai minimal menjadi 1
+                            inputField.classList.add('form-control', 'text-center'); // Tambahkan kelas Bootstrap untuk styling
+                            cell.appendChild(inputField);
+                        }
+        
+                        // Tambahkan sel untuk kolom "Supply" di ujung (sebelah kanan) kolom-kolom destinasi
+                        const supplyCell = row.insertCell();
+                        const supplyInput = document.createElement('input');
+                        supplyInput.type = 'number';
+                        supplyInput.name = `supply${i}`;
+                        supplyInput.min = '1'; // Set nilai minimal menjadi 1
+                        supplyInput.classList.add('form-control', 'text-center'); // Tambahkan kelas Bootstrap untuk styling
+                        supplyCell.appendChild(supplyInput);
+                    }
+        
+                    // Tambahkan row "Demand" setelah baris terakhir
+                    const demandRow = table.insertRow();
+                    const demandTitleCell = demandRow.insertCell();
+                    demandTitleCell.textContent = "Demand";
+                    demandTitleCell.classList.add('text-center'); // Tambahkan kelas text-center ke sel judul baris "Demand"
+                    for (let j = 0; j < cols; j++) {
+                        const demandCell = demandRow.insertCell();
+                        const demandInput = document.createElement('input');
+                        demandInput.type = 'number';
+                        demandInput.name = `demand${j}`;
+                        demandInput.min = '1'; // Set nilai minimal menjadi 1
+                        demandInput.classList.add('form-control', 'text-center'); // Tambahkan kelas Bootstrap untuk styling
+                        demandCell.appendChild(demandInput);
+                    }
+        
+                    // Kosongkan konten sebelumnya di dalam tableContainer
+                    tableContainer.innerHTML = '';
+                    // Masukkan tabel yang dibuat ke dalam tableContainer
+                    tableContainer.appendChild(table);
+                }
+            });
+
+
+        </script>
+
+        {% comment %} Cek Apakah total S dan D Seimbang {% endcomment %}
+        <script>
+            // JavaScript code to handle Solve button click
+            document.addEventListener('DOMContentLoaded', function() {
+                const validateBtn = document.getElementById('validateBtn');
+                
+                const solveBtn = document.getElementById('solveBtn');
+        
+                validateBtn.addEventListener('click', function() {
+                    // Ambil semua input field untuk supply dan demand
+                    const supplyInputs = document.querySelectorAll('input[name^="supply"]');
+                    const demandInputs = document.querySelectorAll('input[name^="demand"]');
+        
+                    // Hitung total supply
+                    let totalSupply = 0;
+                    supplyInputs.forEach(input => {
+                        totalSupply += parseInt(input.value) || 0; // Jumlahkan nilai input, pastikan nilai default adalah 0 jika kosong atau tidak valid
+                    });
+        
+                    // Hitung total demand
+                    let totalDemand = 0;
+                    demandInputs.forEach(input => {
+                        totalDemand += parseInt(input.value) || 0; // Jumlahkan nilai input, pastikan nilai default adalah 0 jika kosong atau tidak valid
+                    });
+        
+                    // Bandingkan total supply dan total demand
+                    if (totalSupply !== totalDemand) {
+                        // Jika total supply tidak sama dengan total demand, tampilkan alert
+                        alert('Total supply and demand are not balanced!');
+                        
+                        event.preventDefault();
+                        solveBtn.style.display='none';
+                    } else{
+                        event.preventDefault();
+                        alert('Data already Balanced!');
+                        solveBtn.style.display='inline';
+                        validateBtn.style.display='none';
+                        // Mencegah submit form
+                        const table = document.getElementById('myTable');
+                        const row1Inputs = table.rows[1].querySelectorAll('input[name^="input"]');
+                        const supplyInputs = table.rows[1].querySelectorAll('input[name^="supply"]');
+                        //const demandInputs = table.rows[1].querySelectorAll('input[name^="demand"]');
+                        const valuesRow1 = Array.from(row1Inputs).map(input => parseInt(input.value));
+                        const valuesSupply = Array.from(supplyInputs).map(input => parseInt(input.value));
+                        //const valuesDemand = Array.from(demandInputs).map(input => parseInt(input.value));
+                        const matrix = [];
+                        const matrixSupply = [];
+                        const matrixDemand = [];
+                        for (let i = 1; i < table.rows.length - 1; i++) {
+                            const rowInputs = table.rows[i].querySelectorAll('input[name^="input"]');
+                            const rowValues = Array.from(rowInputs).map(input => parseInt(input.value));
+                            const supplyInputs = table.rows[i].querySelectorAll('input[name^="supply"]');
+                            const supplyValues = Array.from(supplyInputs).map(input => parseInt(input.value));
+                            //const demandInputs = table.rows[i].querySelectorAll('input[name^="demand"]');
+                            matrix.push(rowValues);
+                            matrixSupply.push(supplyValues);
+                        }
+                        const demandInputs = table.rows[table.rows.length - 1].querySelectorAll('input[name^="demand"]');
+                        const demandValues = Array.from(demandInputs).map(input => parseInt(input.value));
+                        matrixDemand.push(demandValues);
+                        console.log(matrix);
+                        console.log(matrixSupply.flat());
+                        console.log(matrixDemand);
+                        const costJSON = JSON.stringify(matrix);
+                        const supplyJSON = JSON.stringify(matrixSupply.flat());
+                        const demandJSON = JSON.stringify(matrixDemand);
+                        
+                        // Mengambil referensi ke elemen-elemen input berdasarkan ID
+                        const costInput = document.getElementById('cost');
+                        const supplyInput = document.getElementById('supply');
+                        const demandInput = document.getElementById('demand');
+
+                        // Mengatur nilai atribut value dari elemen-elemen input
+                        costInput.value = costJSON;
+                        supplyInput.value = supplyJSON;
+                        demandInput.value = demandJSON;
+                    }
+
+                });
+            });
+        </script>
+        
+        
+    </body>
+</html>
