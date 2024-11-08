@@ -64,7 +64,7 @@
                         <div class="card">
                             <div class="card-body">
                             <div class="container">
-                                <form action="{% url "home_submitssm" %}" method="post">
+                                <form action="{% url "home_resultssm" %}" method="post">
                                     {% csrf_token %}
                                     {% comment %} agar url nya mengikuti nama bottonnya, tulis method="post"
                                     setelah itu tambahkan csrf_token agar setiap input form memiliki token berbeda
@@ -80,7 +80,7 @@
                                             class="col-5"
                                         >
                                         <p> {{ title }}
-                                        </p>  
+                                        </p>    
                                         </div>
                                     </div>
                                     <h4 class="mb-3 fw-bold text-center">Tabel Transportation Problem</h4>
@@ -88,6 +88,21 @@
                                     <div id="table-container" class="table-responsive">
                                         <!-- Table will be inserted here -->
                                     </div>
+                                    <div class="mb-3">
+                                        <input type="hidden" class="form-control" name="title" id="inputName" value="{{title}}" placeholder=""
+                                        />
+                                        <input type="hidden" class="form-control" name="rownames" id="rownames" placeholder="" value="{{rownames}}"
+                                        />
+                                        <input type="hidden" class="form-control" name="columnames" id="columnames" placeholder="" value="{{columnames}}"
+                                        />
+                                        <input type="hidden" class="form-control" name="cost" id="cost" placeholder=""
+                                        />
+                                        <input type="hidden" class="form-control" name="supply" id="supply" placeholder=""
+                                        />
+                                        <input type="hidden" class="form-control" name="demand" id="demand" placeholder=""
+                                        />
+                                    </div>
+                                    
                                     <div class="mb-3 row">
                                         <div class="text-center">
                                             <button  class="btn btn-primary" id="validateBtn">
@@ -97,8 +112,7 @@
                                                 Solve
                                             </button>
                                         </div>
-                                    <div>
-                                        
+                                    <div>    
                                     </div>
                                     </div>
                                 </form>
@@ -146,7 +160,7 @@
                     const tableContainer = document.getElementById('table-container');
                     const table = document.createElement('table');
                     table.classList.add('table', 'table-bordered', 'table-striped', 'text-center'); // Tambahkan kelas-kelas Bootstrap
-        
+                    table.id = 'myTable';
                     // Buat row untuk table heading (th)
                     const headerRow = table.insertRow();
                     // Tambahkan th kosong untuk kolom pertama (tanpa judul)
@@ -157,7 +171,7 @@
                         const headerCell = headerRow.insertCell();
                         headerCell.textContent = `{{columnames}} ${j + 1}`;
                     }
-    
+        
                     // Tambahkan th untuk kolom "Supply" di ujung (sebelah kanan) kolom-kolom destinasi
                     const supplyHeaderCell = headerRow.insertCell();
                     supplyHeaderCell.textContent = "Supply";
@@ -212,8 +226,6 @@
                     tableContainer.appendChild(table);
                 }
             });
-
-
         </script>
 
         {% comment %} Cek Apakah total S dan D Seimbang {% endcomment %}
@@ -297,6 +309,7 @@
                 });
             });
         </script>
+        
         
         
     </body>

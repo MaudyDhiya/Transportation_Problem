@@ -6,5 +6,7 @@ urlpatterns = [
     path('ksam', home_ksam, name='home_ksam'),
     path('submitssm', home_submitssm, name='home_submitssm'),
     path('submitksam', home_submitksam, name='home_submitksam'),
-    path('resultksam', home_resultksam, name='home_resultksam')
+    path('resultksam', home_resultksam, name='home_resultksam'),
+    path('resultssm', home_resultssm, name='home_resultssm')
+    
 ]
