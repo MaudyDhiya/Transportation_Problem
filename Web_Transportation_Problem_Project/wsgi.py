@@ -1,5 +1,5 @@
 """
-WSGI config for web_skripsi project.
+WSGI config for Web Transportational Problem Project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

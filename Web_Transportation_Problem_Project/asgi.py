@@ -1,5 +1,5 @@
 """
-ASGI config for web_skripsi project.
+ASGI config for Web Transportational Problem Project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
