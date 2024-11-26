@@ -16,14 +16,14 @@ Untuk menjalankan aplikasi ini, ada memerlukan:
 
 ## 🚀 Tampilan & Cara Kerja Website
 1. **Halaman Utama Website**
-   
    Pengguna dapat memilih metode yang ingin digunakan.
+![Halaman Utama Website] (https://github.com/MaudyDhiya/Transportation_Problem/blob/main/Images/Menu%20Program/Login%20Page.png?raw=true)
 
-2. **Halaman Pengisian Informasi Permasalahan transportasi**
+3. **Halaman Pengisian Informasi Permasalahan transportasi**
 
    Pengguna dapat mengisi **Title**, **Number of Source**, **Number of Destination** serta memilih **Row Names**, dan **Column Names** kemudian klik **Submit**
 
-3. **Halaman Pengisian Data Permasalahan Transportasi**
+4. **Halaman Pengisian Data Permasalahan Transportasi**
 
    Pengguna dapat mengisi data permasalahan transportasi yang ingin diselesaikan. Lalu klik *Validate untuk memeriksa apakah permasalahan transportasi yang diinput sudah seimbang. Jika seimbang, akan muncul pop-up seperti ini:
 
@@ -31,9 +31,9 @@ Untuk menjalankan aplikasi ini, ada memerlukan:
 
    Namun, jika data yang diisi tidak seimbang, maka akan muncul pop-up seperti ini:
 
-4. **Tampilan Data Siap untuk Di Solve**
+5. **Tampilan Data Siap untuk Di Solve**
 
-5. **Tampilan Hasil IBFS dari Permasalahan Transportasi atau Final Solution Table**
+6. **Tampilan Hasil IBFS dari Permasalahan Transportasi atau Final Solution Table**
 
 
 
