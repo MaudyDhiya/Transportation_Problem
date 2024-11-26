@@ -1,39 +1,46 @@
 # Web-Based Transportation Problem Solver
-Website ini dikembangkan untuk menyelesaikan permasalahan transportasi seimbang menggunakan dua metode terbaru, yaitu Supply Slection Method (SSM) dan Karagul-Sahin Approximation Method (KSAM). Permasalahan transportasi adalah cabang riset operasi yang berutujuan untuk meminimalkan total biaya distribusi barang daru supply ke demand.
+This website is developed to solve balanced transportation problems using two modern methods, namely the Supply Selection Method (SSM) and the Karagul-Sahin Approximation Method (KSAM). A transportation problem is a branch of operations research aimed at minimizing the total cost of distributing goods from supply points to demand points.
 
-Proyek ini bertujuan untuk memberikan solusi yang efisien melalui antarmuka web berbasis Python. Dalam pengujian, metode SSM terbukti lebih optimal dibandingkan KSAM, menghasilkan Initial Basic Feasible Solution (IBFS) dengan biaya distribusi yang lebih rendah.
+The goal of this project is to provide an efficient solution through a Python-based web interface. In testing, the SSM method proved to be more optimal compared to KSAM, resulting in an Initial Basic Feasible Solution (IBFS) with a lower distribution cost.
 
-## ✨ Fitur Utama
-* Solusi Permasalahan Transportasi Seimbang: Mengoptimalkan alokasi barang dari sumber ke tujuan.
-* Dukungan Dua Metode: Implementasi SSM dan KSAM untuk perbandingan hasil.
-* Validasi Data: Sistem secara otomatis memvalidasi kesimbangan antara supply dan demand.
-* Antarmuka Modern: Mudah digunakan melalui antarmuka web yang responsif dan menyediakan hasil visualisasi tabel solusi.
+## ✨ Key Features
+* **Balanced Transportation Problem Solution**: Optimizes the allocation of goods from sources to destinations.
+* **Two Method Support**: Implements both SSM and KSAM for result comparison.
+* **Data Validation**: The system automatically validates the balance between supply and demand.
+* **Modern Interface**: Easy to use with a responsive web interface that provides solution table visualizations.
 
-## 💻 Persyaratan Sistem
-Untuk menjalankan aplikasi ini, ada memerlukan:
-- **Python**: Versi 3.8 atau lebih baru
-- **Django**: Versi 4.2.16
+## 💻 System Requirements
+To run this application, you will need:
+- **Python**: Version 3.8 or higher
+- **Django**: Version 4.2.16
 
 ## 🚀 Tampilan & Cara Kerja Website
-1. **Halaman Utama Website**
-   Pengguna dapat memilih metode yang ingin digunakan.
+1. **Main Website Page**
+
+    Users can choose which method they would like to use.
 ![Halaman Utama Website](https://github.com/MaudyDhiya/Transportation_Problem/blob/main/Images/Menu%20Program/Login%20Page.png?raw=true)
 
-3. **Halaman Pengisian Informasi Permasalahan transportasi**
+2. **Halaman Pengisian Informasi Permasalahan Transportasi**
 
-   Pengguna dapat mengisi **Title**, **Number of Source**, **Number of Destination** serta memilih **Row Names**, dan **Column Names** kemudian klik **Submit**
+   Users can fill in the **Title**, **Number of Source**, **Number of Destination** and choose **Row Names**, and **Column Names** then click **Submit**
+![Halaman Pengisian Informasi Permasalahan Transportasi](https://github.com/MaudyDhiya/Transportation_Problem/blob/main/Images/Menu%20Program/Information%20Entry%20Page.png?raw=true)
 
-4. **Halaman Pengisian Data Permasalahan Transportasi**
+3. **Halaman Pengisian Data Permasalahan Transportasi**
 
-   Pengguna dapat mengisi data permasalahan transportasi yang ingin diselesaikan. Lalu klik *Validate untuk memeriksa apakah permasalahan transportasi yang diinput sudah seimbang. Jika seimbang, akan muncul pop-up seperti ini:
+   Users can enter the transportation problem data they wish to solve.
+![Halaman Pengisian Data Permasalahan Transportasi](https://github.com/MaudyDhiya/Transportation_Problem/blob/main/Images/Menu%20Program/Data%20Entry%20Page.png?raw=true)
+ 
+   Then click Validate to check if the inputted transportation problem is balanced. If balanced, a pop-up like this will appear:
+![Halaman Pengisian Data Permasalahan Transportasi](https://github.com/MaudyDhiya/Transportation_Problem/blob/main/Images/Menu%20Program/Balanced%20Data.png?raw=true)
 
+   However, if the entered data is not balanced, a pop-up like this will appear:
+![Halaman Pengisian Data Permasalahan Transportasi](https://github.com/MaudyDhiya/Transportation_Problem/blob/main/Images/Menu%20Program/Unbalanced%20Data.png?raw=true)
 
+4. **Tampilan Data Siap untuk Di Solve**
+![Tampilan Data Siap untuk Di Solve](https://github.com/MaudyDhiya/Transportation_Problem/blob/main/Images/Menu%20Program/Page%20to%20Solve.png?raw=true)
 
-   Namun, jika data yang diisi tidak seimbang, maka akan muncul pop-up seperti ini:
-
-5. **Tampilan Data Siap untuk Di Solve**
-
-6. **Tampilan Hasil IBFS dari Permasalahan Transportasi atau Final Solution Table**
+5. **Tampilan Hasil IBFS dari Permasalahan Transportasi atau Final Solution Table**
+![Tampilan Hasil IBFS dari Permasalahan Transportasi atau Final Solution Table](https://github.com/MaudyDhiya/Transportation_Problem/blob/main/Images/Menu%20Program/Final%20Solution%20Page.png?raw=true)
 
 
 
