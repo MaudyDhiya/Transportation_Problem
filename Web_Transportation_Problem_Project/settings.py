@@ -25,20 +25,23 @@ SECRET_KEY = 'django-insecure-noamyt-h^!4=kw8au#h00(hb1whpxnmy(io2xp)ty*6x$7=^tx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    # aplikasi default Django
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ssm_app',
+    'Final_Result_Transportation_Problem_Project',  # pastikan ini sesuai dengan nama aplikasi Anda
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -50,12 +53,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'web_skripsi.urls'
+ROOT_URLCONF = 'Web_Transportation_Problem_Project.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],  # Jika Anda menggunakan folder templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'web_skripsi.wsgi.application'
+WSGI_APPLICATION = 'Web_Transportation_Problem_Project.wsgi.application'
 
 
 # Database

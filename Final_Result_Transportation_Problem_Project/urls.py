@@ -1,5 +1,5 @@
 from django.urls import path
-from ssm_app.views import *
+from Final_Result_Transportation_Problem_Project.views import *
 urlpatterns = [
     path('', home_beranda, name='home_beranda'),
     path('ssm/', home_ssm, name='home_ssm'),

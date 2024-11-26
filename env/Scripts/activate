@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="D:\Adek\UM\Kuliah UM\Skripsi\Program\web_skripsi\env"
+VIRTUAL_ENV="D:\Adek\UM\Kuliah UM\Skripsi\Web Transportation Problem\Final_Project_Transportation_Problem\env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

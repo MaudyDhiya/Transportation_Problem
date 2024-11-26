@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class SsmAppConfig(AppConfig):
+class FinalResultTransportationProblemProjectConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'ssm_app'
+    name = 'Final_Result_Transportation_Problem_Project'

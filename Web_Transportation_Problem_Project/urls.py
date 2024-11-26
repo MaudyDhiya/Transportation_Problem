@@ -19,5 +19,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('ssm_app.urls')),
+    path('', include('Final_Result_Transportation_Problem_Project.urls')),  # Pastikan aplikasi Anda memiliki file urls.py
 ]
