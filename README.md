@@ -17,7 +17,7 @@ Untuk menjalankan aplikasi ini, ada memerlukan:
 ## 🚀 Tampilan & Cara Kerja Website
 1. **Halaman Utama Website**
    Pengguna dapat memilih metode yang ingin digunakan.
-![Halaman Utama Website] (https://github.com/MaudyDhiya/Transportation_Problem/blob/main/Images/Menu%20Program/Login%20Page.png?raw=true)
+![Halaman Utama Website](https://github.com/MaudyDhiya/Transportation_Problem/blob/main/Images/Menu%20Program/Login%20Page.png?raw=true)
 
 3. **Halaman Pengisian Informasi Permasalahan transportasi**
 
