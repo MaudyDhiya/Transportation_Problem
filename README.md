@@ -14,18 +14,18 @@ To run this application, you will need:
 - **Python**: Version 3.8 or higher
 - **Django**: Version 4.2.16
 
-## 🚀 Tampilan & Cara Kerja Website
+## 🚀 Website Overview & How It Works
 1. **Main Website Page**
 
     Users can choose which method they would like to use.
 ![Halaman Utama Website](https://github.com/MaudyDhiya/Transportation_Problem/blob/main/Images/Menu%20Program/Login%20Page.png?raw=true)
 
-2. **Halaman Pengisian Informasi Permasalahan Transportasi**
+2. **Transportation Problem Information Entry Page**
 
    Users can fill in the **Title**, **Number of Source**, **Number of Destination** and choose **Row Names**, and **Column Names** then click **Submit**
 ![Halaman Pengisian Informasi Permasalahan Transportasi](https://github.com/MaudyDhiya/Transportation_Problem/blob/main/Images/Menu%20Program/Information%20Entry%20Page.png?raw=true)
 
-3. **Halaman Pengisian Data Permasalahan Transportasi**
+3. **Transportation Problem Data Entry Page**
 
    Users can enter the transportation problem data they wish to solve.
 ![Halaman Pengisian Data Permasalahan Transportasi](https://github.com/MaudyDhiya/Transportation_Problem/blob/main/Images/Menu%20Program/Data%20Entry%20Page.png?raw=true)
@@ -36,10 +36,10 @@ To run this application, you will need:
    However, if the entered data is not balanced, a pop-up like this will appear:
 ![Halaman Pengisian Data Permasalahan Transportasi](https://github.com/MaudyDhiya/Transportation_Problem/blob/main/Images/Menu%20Program/Unbalanced%20Data.png?raw=true)
 
-4. **Tampilan Data Siap untuk Di Solve**
+4. **Data Ready to Solve View**
 ![Tampilan Data Siap untuk Di Solve](https://github.com/MaudyDhiya/Transportation_Problem/blob/main/Images/Menu%20Program/Page%20to%20Solve.png?raw=true)
 
-5. **Tampilan Hasil IBFS dari Permasalahan Transportasi atau Final Solution Table**
+5. **IBFS Results or Final Solution Table View**
 ![Tampilan Hasil IBFS dari Permasalahan Transportasi atau Final Solution Table](https://github.com/MaudyDhiya/Transportation_Problem/blob/main/Images/Menu%20Program/Final%20Solution%20Page.png?raw=true)
 
 
